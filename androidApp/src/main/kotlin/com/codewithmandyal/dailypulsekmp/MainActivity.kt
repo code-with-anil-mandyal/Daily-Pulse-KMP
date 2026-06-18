@@ -12,8 +12,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
+        Platform().logSystemInfo()
+
         setContent {
-            App()
+            //App()
+            AboutScreen()
         }
     }
 }

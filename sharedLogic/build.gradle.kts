@@ -6,6 +6,9 @@ plugins {
 }
 
 kotlin {
+
+    applyDefaultHierarchyTemplate()
+
     listOf(
         iosArm64(),
         iosSimulatorArm64()
@@ -33,8 +36,23 @@ kotlin {
     }
     
     sourceSets {
-        commonMain.dependencies {
-            // put your Multiplatform dependencies here
+
+       val androidMain by getting {
+           dependencies{
+                implementation(libs.androidx.lifecycle.viewmodel.ktx)
+           }
+       }
+
+        val iosMain by getting {
+            dependencies{
+
+            }
+        }
+
+        val commonMain by getting {
+            dependencies{
+                implementation(libs.kotlinx.coroutines.core)
+            }
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
