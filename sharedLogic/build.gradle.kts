@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidMultiplatformLibrary)
+    id("co.touchlab.skie") version "0.10.12"
 }
 
 kotlin {
@@ -40,6 +41,7 @@ kotlin {
        val androidMain by getting {
            dependencies{
                 implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
            }
        }
 
